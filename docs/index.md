@@ -1,15 +1,11 @@
 # Welcome to geosdemo
 
-
 [![image](https://img.shields.io/pypi/v/geosdemo.svg)](https://pypi.python.org/pypi/geosdemo)
-
 
 **A python package for interactive mapping.**
 
-
 -   Free software: MIT license
--   Documentation: <https://giswqs.github.io/geosdemo>
-    
+-   Documentation: <https://geosdemo.gishub.org>
 
 ## Features
 
