@@ -23,10 +23,10 @@ plugins:
     - git-revision-date
     - mkdocs-jupyter:
           include_source: True
-        #   ignore_h1_titles: True
-        #   execute: True
-        #   execute_ignore: "*.ipynb"
-          
+          #   ignore_h1_titles: True
+          #   execute: True
+          #   execute_ignore: "*.ipynb"
+
 markdown_extensions:
     - attr_list
     - pymdownx.superfences
@@ -50,3 +50,14 @@ nav:
     - Report Issues: https://github.com/giswqs/geosdemo/issues
     - API Reference:
           - geosdemo module: geosdemo.md
+    - Python Basics:
+          - python/01_getting_started.ipynb
+          - python/02_variables_data_types.ipynb
+          - python/03_introducing_lists.ipynb
+          - python/04_working_with_lists.ipynb
+          - python/05_if_statements.ipynb
+          - python/06_dictionaries.ipynb
+          - python/07_user_input_while_loops.ipynb
+          - python/08_functions.ipynb
+          - python/09_classes.ipynb
+          - python/10_files_and_exceptions.ipynb
