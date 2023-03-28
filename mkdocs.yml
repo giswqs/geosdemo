@@ -61,3 +61,6 @@ nav:
           - python/08_functions.ipynb
           - python/09_classes.ipynb
           - python/10_files_and_exceptions.ipynb
+    - Assignments:
+          - labs/lab4.ipynb
+          - labs/lab5.ipynb
