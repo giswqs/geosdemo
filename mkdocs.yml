@@ -50,6 +50,7 @@ nav:
     - Report Issues: https://github.com/giswqs/geosdemo/issues
     - Examples:
           - examples/intro.ipynb
+          - examples/folium.ipynb
     - API Reference:
           - geosdemo module: geosdemo.md
     - Python Basics:
