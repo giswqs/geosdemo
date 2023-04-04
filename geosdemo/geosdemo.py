@@ -132,6 +132,22 @@ class Map(ipyleaflet.Map):
             raise ValueError(f"Invalid basemap name: {basemap}")
     
 
+    def add_geojson(self, data, **kwargs):
+        """Adds a GeoJSON layer to the map.
+
+        Args:
+            data (dict): The GeoJSON data.
+            kwargs: Keyword arguments to pass to the GeoJSON layer.
+        """
+        import json
+
+        if isinstance(data, str):
+            with open(data, "r") as f:
+                data = json.load(f)
+
+        geojson = ipyleaflet.GeoJSON(data=data, **kwargs)
+        self.add_layer(geojson)
+
 def generate_random_string(length=10, upper=False, digits=False, punctuation=False):
     """Generates a random string of a given length.
 
