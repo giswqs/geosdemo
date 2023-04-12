@@ -25,6 +25,11 @@ class Map(ipyleaflet.Map):
         if kwargs["fullscreen_control"]:
             self.add_fullscreen_control()
 
+        if "height" in kwargs:
+            self.layout.height = kwargs["height"]
+        else:
+            self.layout.height = "600px"
+
     def add_search_control(self, position="topleft", **kwargs):
         """Adds a search control to the map.
 
