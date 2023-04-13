@@ -51,6 +51,10 @@ nav:
     - Examples:
           - examples/intro.ipynb
           - examples/folium.ipynb
+          - examples/raster.ipynb
+          - examples/ipywidgets.ipynb
+          - examples/ipywidgets_box.ipynb
+          - examples/ipywidgets_events.ipynb
     - API Reference:
           - geosdemo module: geosdemo.md
     - Python Basics:
