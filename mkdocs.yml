@@ -57,6 +57,7 @@ nav:
           - examples/ipywidgets_events.ipynb
     - API Reference:
           - geosdemo module: geosdemo.md
+          - foliumap module: foliumap.md
     - Python Basics:
           - python/01_getting_started.ipynb
           - python/02_variables_data_types.ipynb
