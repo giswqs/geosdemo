@@ -3,6 +3,7 @@
 import string
 import random
 import ipyleaflet
+import ipywidgets as widgets
 
 class Map(ipyleaflet.Map):
     
@@ -220,6 +221,69 @@ class Map(ipyleaflet.Map):
         if fit_bounds:
             bbox = [[bounds[1], bounds[0]], [bounds[3], bounds[2]]]
             self.fit_bounds(bbox)
+
+    def add_toolbar(self, position="topright"):
+
+        widget_width = "250px"
+        padding = "0px 0px 0px 5px"  # upper, right, bottom, left
+
+        toolbar_button = widgets.ToggleButton(
+            value=False,
+            tooltip="Toolbar",
+            icon="wrench",
+            layout=widgets.Layout(width="28px", height="28px", padding=padding),
+        )
+
+        close_button = widgets.ToggleButton(
+            value=False,
+            tooltip="Close the tool",
+            icon="times",
+            button_style="primary",
+            layout=widgets.Layout(height="28px", width="28px", padding=padding),
+        )
+
+        toolbar = widgets.HBox([toolbar_button])
+
+        def toolbar_click(change):
+            if change["new"]:
+                toolbar.children = [toolbar_button, close_button]
+            else:
+                toolbar.children = [toolbar_button]
+                
+        toolbar_button.observe(toolbar_click, "value")
+
+        def close_click(change):
+            if change["new"]:
+                toolbar_button.close()
+                close_button.close()
+                toolbar.close()
+                
+        close_button.observe(close_click, "value")
+
+        rows = 2
+        cols = 2
+        grid = widgets.GridspecLayout(rows, cols, grid_gap="0px", layout=widgets.Layout(width="65px"))
+
+        icons = ["folder-open", "map", "bluetooth", "area-chart"]
+
+        for i in range(rows):
+            for j in range(cols):
+                grid[i, j] = widgets.Button(description="", button_style="primary", icon=icons[i*rows+j], 
+                                            layout=widgets.Layout(width="28px", padding="0px"))
+                
+        toolbar = widgets.VBox([toolbar_button])
+
+        def toolbar_click(change):
+            if change["new"]:
+                toolbar.children = [widgets.HBox([close_button, toolbar_button]), grid]
+            else:
+                toolbar.children = [toolbar_button]
+                
+        toolbar_button.observe(toolbar_click, "value")
+
+        toolbar_ctrl = ipyleaflet.WidgetControl(widget=toolbar, position=position)
+
+        self.add_control(toolbar_ctrl)
 
 def generate_random_string(length=10, upper=False, digits=False, punctuation=False):
     """Generates a random string of a given length.
