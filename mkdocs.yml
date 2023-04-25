@@ -55,6 +55,7 @@ nav:
           - examples/ipywidgets.ipynb
           - examples/ipywidgets_box.ipynb
           - examples/ipywidgets_events.ipynb
+          - examples/toolbar.ipynb
     - API Reference:
           - geosdemo module: geosdemo.md
           - foliumap module: foliumap.md
